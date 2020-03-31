@@ -1,22 +1,22 @@
 package com.company.KDT;
 import java.security.cert.PolicyNode;
-import java.util.List;
+import java.util.ArrayList;
 
 public class KDTree {
-    KDNode root = new KDNode();
+    public static KDNode root = new KDNode();
 
-    public void createKDT(List<Point2D> pointList){
+    public static void createKDT(ArrayList<Point2D> pointList){
         int i = 1;
         for(Point2D point : pointList){
-            root = insertKDT(point,root,i);
+            root = insertKDT(point, root, i);
         }
     }
-    public Point2D findTheNearest(Point2D dest){
+    public static Point2D findTheNearest(Point2D dest){
         int i = 1;
-        KDNode res = findTheNearestNeighbor(dest, this.root, null, i);
+        KDNode res = findTheNearestNeighbor(dest, root, null, i);
         return res.point;
     }
-    private KDNode insertKDT(Point2D p, KDNode node, int i){
+    private static KDNode insertKDT(Point2D p, KDNode node, int i){
         if(node == null){
             node = new KDNode();
             node.point = p;
@@ -35,7 +35,7 @@ public class KDTree {
         }
         return node;
     }
-    private KDNode findTheNearestNeighbor(Point2D dest, KDNode root, KDNode best, int i){
+    private static KDNode findTheNearestNeighbor(Point2D dest, KDNode root, KDNode best, int i){
         KDNode goodSide = new KDNode();
         KDNode badSide = new KDNode();
         if(root == null){
@@ -68,7 +68,7 @@ public class KDTree {
         }
         return best;
     }
-    private boolean isWorth(Point2D dest, KDNode node, KDNode best, int i){
+    private static boolean isWorth(Point2D dest, KDNode node, KDNode best, int i){
         if(node != null){
             if (i == 0){
                 if (Math.abs(node.point.x - dest.x)<best.distance(dest)){

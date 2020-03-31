@@ -1,7 +1,8 @@
 package com.company.KDT;
 
 public class Point2D {
-    double x, y;
+    public double x;
+    public double y;
     Point2D(){
 
     }

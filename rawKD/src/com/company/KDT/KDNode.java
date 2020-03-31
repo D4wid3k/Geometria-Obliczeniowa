@@ -8,4 +8,8 @@ public class KDNode {
     public double distance(Point2D dest){
         return Math.sqrt((dest.x-this.point.x)*(dest.x-this.point.x) + (dest.y-this.point.y)*(dest.y-this.point.y));
     }
+
+    KDNode(){
+
+    }
 }
