@@ -3,6 +3,7 @@ import java.awt.*;
 
 import com.company.*;
 import com.company.Point;
+import com.company.Polygon;
 
 public class MainWind {
     private JPanel mainPanel;
@@ -27,5 +28,8 @@ public class MainWind {
         mainFrame.setVisible(true);*/
         Drawing d = new Drawing();
         d.setVisible(true);
+        Triangle.pointInT();
+        Polygon.isInP();
+        Line.circleLine();
     }
 }

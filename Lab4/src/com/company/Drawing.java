@@ -18,6 +18,7 @@ public class Drawing extends JFrame {
         setSize(300,300);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setTitle("GUI");
+        System.out.println("Zadanie 1");
         Line.whichSide(l1,p3);
     }
 
@@ -32,8 +33,8 @@ public class Drawing extends JFrame {
         Graphics2D g2 = (Graphics2D) g;
         g2.drawLine(p1.x,p1.y,p2.x,p2.y);
         g2.setColor(Color.RED);
-        g2.drawLine(20,20, 20,280);
-        g2.drawLine(280,280, 20,280);
+        g2.drawLine(10,10, 10,280);
+        g2.drawLine(280,280, 10,280);
         g2.drawOval(gen.nextInt(300),gen.nextInt(300),4,4);
     }
 
