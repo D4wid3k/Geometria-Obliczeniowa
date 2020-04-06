@@ -2,6 +2,7 @@ package com.company;
 
 import com.company.geoModels.Line;
 import com.company.geoModels.Point;
+import com.company.geoModels.Triangle;
 
 import java.util.Scanner;
 
@@ -45,9 +46,56 @@ public class UI {
     }
 
     private static void opt5() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Podaj wspolrzedna x punktu pierwszego dla trojkata");
+        double x1 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu pierwszego dla trojkata");
+        double y1 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna x punktu drugiego dla trojkata");
+        double x2 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu drugiego dla trojkata");
+        double y2 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna x punktu trzeciego dla trojkata");
+        double x3 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu trzeciego dla trojkata");
+        double y3 = scan.nextDouble();
+        Point p1 = new Point(x1,y1);
+        Point p2 = new Point(x2,y2);
+        Point p3 = new Point(x3,y3);
+        Triangle T = new Triangle(p1,p2,p3);
+
+        double wyn = Triangle.triangleSurfaceArea(T);
+        System.out.println("Pole powierzchni podanego trojkata to "+wyn);
     }
 
     private static void opt4() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Podaj wspolrzedna x punktu pierwszego dla trojkata");
+        double x1 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu pierwszego dla trojkata");
+        double y1 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna x punktu drugiego dla trojkata");
+        double x2 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu drugiego dla trojkata");
+        double y2 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna x punktu trzeciego dla trojkata");
+        double x3 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu trzeciego dla trojkata");
+        double y3 = scan.nextDouble();
+        Point p1 = new Point(x1,y1);
+        Point p2 = new Point(x2,y2);
+        Point p3 = new Point(x3,y3);
+        Triangle T = new Triangle(p1,p2,p3);
+
+        System.out.println("Podaj wspolrzedna x punktu sprawdzanego");
+        double x4 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu sprawdzanego");
+        double y4 = scan.nextDouble();
+        Point p4 = new Point(x4,y4);
+
+        Triangle.pointInT(p4,T);
     }
 
     private static void opt3() {

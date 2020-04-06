@@ -18,27 +18,10 @@ public class Triangle {
         //System.out.println("Pole powierzchni podanego trojkata to "+tSA);
         return tSA;
     }
-    public static void pointInT(){
-        Random gen = new Random();
-        Point pT1 = new Point(gen.nextInt(300),gen.nextInt(300));
-        Point pT2 = new Point(gen.nextInt(300),gen.nextInt(300));
-        Point pT3 = new Point(gen.nextInt(300),gen.nextInt(300));
-        Triangle T = new Triangle(pT1,pT2,pT3);
-        Point pRan = new Point(gen.nextInt(300),gen.nextInt(300));
-
-        System.out.println();
-        System.out.println("Zadanie 2");
-        System.out.println("Wygenerowany trojkat:");
-        System.out.println("p1 = ("+pT1.x+","+pT1.y+")");
-        System.out.println("p2 = ("+pT2.x+","+pT2.y+")");
-        System.out.println("p3 = ("+pT3.x+","+pT3.y+")");
-        System.out.println();
-        System.out.println("Wygenerowany punkt:");
-        System.out.println("pRan = ("+pRan.x+","+pRan.y+")");
-
-        Triangle T1 = new Triangle(pRan,pT2,pT3);
-        Triangle T2 = new Triangle(pRan,pT1,pT2);
-        Triangle T3 = new Triangle(pRan,pT1,pT3);
+    public static void pointInT(Point pRan, Triangle T){
+        Triangle T1 = new Triangle(pRan,T.p2,T.p3);
+        Triangle T2 = new Triangle(pRan,T.p1,T.p2);
+        Triangle T3 = new Triangle(pRan,T.p1,T.p3);
 
         double tsMain = Triangle.triangleSurfaceArea(T);
         double ts1 = Triangle.triangleSurfaceArea(T1);
@@ -48,9 +31,9 @@ public class Triangle {
         System.out.println();
 
         if (tsMain == ts1+ts2+ts3)
-            System.out.println("Wygenerowany punkt pRan lezy w trojkacie.");
+            System.out.println("Punkt lezy w trojkacie.");
         else
-            System.out.println("Wygenerowany punkt pRan nie lezy w trojkacie.");
+            System.out.println("Punkt nie lezy w trojkacie.");
 
     }
 }
