@@ -22,20 +22,76 @@ public class UI {
 
         switch(opt){
             case 1:
+                opt1();
                 break;
             case 2:
+                opt2();
                 break;
             case 3:
+                opt3();
                 break;
             case 4:
+                opt4();
                 break;
             case 5:
+                opt5();
                 break;
             case 6:
+                System.exit(0);
                 break;
             default:
                 System.out.println("Wybierz liczbe z przedzialu od 1 do 6.");
         }
+    }
+
+    private static void opt5() {
+    }
+
+    private static void opt4() {
+    }
+
+    private static void opt3() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Podaj wspolrzedna x punktu pierwszego dla linii");
+        double x1 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu pierwszego dla linii");
+        double y1 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna x punktu drugiego dla linii");
+        double x2 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu drugiego dla linii");
+        double y2 = scan.nextDouble();
+        Point p1 = new Point(x1,y1);
+        Point p2 = new Point(x2,y2);
+        Line l1 = new Line(p1,p2);
+
+        Line.rownanieProstej(l1);
+
+        System.out.println("Podaj wspolrzedna x punktu do sprawdzenia");
+        double x3 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu do sprawdzenia");
+        double y3 = scan.nextDouble();
+        Point p3 = new Point(x3,y3);
+
+        Line.whichSide(l1, p3);
+    }
+
+    private static void opt2() {
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Podaj wspolrzedna x punktu pierwszego");
+        double x1 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu pierwszego");
+        double y1 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna x punktu drugiego");
+        double x2 = scan.nextDouble();
+        System.out.println("Podaj wspolrzedna y punktu drugiego");
+        double y2 = scan.nextDouble();
+        Point p1 = new Point(x1,y1);
+        Point p2 = new Point(x2,y2);
+        Line l1 = new Line(p1,p2);
+
+        Line.rownanieProstej(l1);
     }
 
     public static void opt1(){
